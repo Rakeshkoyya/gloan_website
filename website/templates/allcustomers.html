@@ -1,0 +1,28 @@
+<section>
+	<div class="container">
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+
+					<th scope="col">username</th>
+					<th scope="col">emailID</th>
+					<th scope="col">Bank ac number</th>
+					<th scope="col">address</th>
+					<th scope="col">phone number</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for i in us %}
+				<tr>
+
+					<td>{{i.username}}</td>
+					<td>{{i.email}}</td>
+					<td>{{i.bank_ac}}</td>
+					<td>{{i.address}}</td>
+					<td>{{i.phone_number}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</section>

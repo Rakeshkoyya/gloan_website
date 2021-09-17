@@ -1,0 +1,46 @@
+{% extends 'inner-page.html' %}
+
+{% block content %}
+
+<section class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>Login Page</h2>
+			<ol>
+				<li><a href="/">Home</a></li>
+				<li>Login Page</li>
+			</ol>
+		</div>
+
+	</div>
+</section><!-- End Breadcrumbs -->
+
+<section>
+	<div class="container">
+		<div class="panel panel-primary">
+			<div class="panel-body">
+				<form action="login" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email ID</label>
+						<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							name="email" placeholder="Enter email ID">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" class="form-control" name="password" id="exampleInputPassword1"
+							placeholder="Password">
+					</div>
+					<div class="form-group form-check">
+						<input type="checkbox" class="form-check-input" id="exampleCheck1">
+						<label class="form-check-label" for="exampleCheck1">Remember me</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

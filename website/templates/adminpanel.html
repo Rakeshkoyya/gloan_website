@@ -1,0 +1,62 @@
+{% extends 'inner-page.html' %}
+
+{% block content %}
+
+
+<!-- ======= Breadcrumbs ======= -->
+<section class="breadcrumbs">
+	<div class="container">
+
+		<div class="d-flex justify-content-between align-items-center">
+			<h2>Admin panel</h2>
+			<ol>
+				<li><a href="/">Home</a></li>
+				<li>Admin panel</li>
+			</ol>
+		</div>
+
+	</div>
+</section><!-- End Breadcrumbs -->
+
+<ul class="nav nav-tabs justify-content-center">
+	<li class="nav-item">
+		<a href="#panA" class="nav-link active" role="tab" data-toggle="tab">All customers</a>
+	</li>
+	<li class="nav-item">
+		<a href="#panB" class="nav-link " role="tab" data-toggle="tab">create new customer</a>
+	</li>
+	<li class="nav-item">
+		<a href="#panC" class="nav-link " role="tab" data-toggle="tab">admin profile</a>
+	</li>
+
+</ul>
+
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="panA">
+		{%include 'allcustomers.html'%}
+	</div>
+	<div role="tabpanel" class="tab-pane " id="panB">
+		{%include 'register.html'%}
+	</div>
+	<div role="tabpanel" class="tab-pane " id="panC">
+		<section>
+			<div class="container">
+				admin details here <br>
+				change password option <br> editing admin data
+			</div>
+		</section>
+	</div>
+
+</div>
+
+
+
+
+
+<!-- Bootstrap core JavaScript
+	  ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+
+
+{% endblock %}
