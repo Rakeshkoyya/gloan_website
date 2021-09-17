@@ -20,20 +20,19 @@ def home(request):
 @login_required(login_url='login')
 def admin_panel(request):
 	if request.method == 'POST':
-		firstname = request.POST['firstname']
-		lastname = request.POST['lastname']
+		username = request.POST['username']
 		bank_acno = request.POST['bank_acno']
 		email = request.POST['email']
-		passwor = '0ok9ij8uh'
+		phone_no = request.POST['phonenumber']
+		password = request.POST['password']
 
-		uname = firstname+" "+lastname
-
-		user = User.objects.create_user(uname,email,passwor)
+		user = User.objects.create_user(username,email,password)
 		user.bank_ac = bank_acno
+		user.phone_number = phone_no
 		user.save()
 	
 
-		return HttpResponse(firstname+" : "+lastname+'\n'+'****'+email)
+		return HttpResponse('customer created successfully'+'  ****  '+email)
 	return render(request, 'adminpanel.html')
 
 def login(request):
@@ -75,4 +74,3 @@ def login(request):
 def logout_view(request):
     logout(request)
     return redirect('/')
-	
