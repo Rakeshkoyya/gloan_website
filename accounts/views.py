@@ -40,16 +40,12 @@ def login(request):
 	
     # print(users)
 	if user.is_authenticated:
-		print('usrr is_authenticated ____________________________')
 		if user.is_admin:
 			User = get_user_model()
 			users = list(User.objects.filter(is_admin=False))
 			print(users)
 			return render(request, 'adminpanel.html', {'us': users,'nbar':'adminpanel'})
 		return render(request, 'customerview.html',{'us':user,'nbar':'dashboard'})
-
-
-	print('usrr not authenticated ____________________________')
 
 		
 	if request.method == 'POST':
